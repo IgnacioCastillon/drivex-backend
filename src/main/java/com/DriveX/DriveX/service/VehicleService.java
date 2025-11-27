@@ -50,5 +50,5 @@ public class VehicleService {
         return repo.findByYear(year);
     }
 
-    public List<Vehicle> findByVehicle_type(String q) {return repo.findByvehicle_type(q);}
+    public List<Vehicle> findByVehicleType(String q) {return repo.findByVehicleType(q);}
 }

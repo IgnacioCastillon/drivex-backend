@@ -41,7 +41,8 @@ public class Vehicle {
 
     private Integer year;
 
-    private String fuel_type;
+    @Column(name = "fuel_type")
+    private String fuelType;
 
     private Long mileage;
 
@@ -52,8 +53,8 @@ public class Vehicle {
     private LocalDateTime updated_at;
 
     private int doors;
-
-    private String vehicle_type;
+    @Column(name = "vehicle_type")
+    private String vehicleType;
 
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL, orphanRemoval = true)

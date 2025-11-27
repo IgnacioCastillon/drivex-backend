@@ -91,9 +91,9 @@ public class VehicleController {
     public List<Vehicle> searchYear(@RequestParam int year) {
         return service.findByYear(year);
     }
-    @GetMapping("/vehicle_type")
-    public List<Vehicle> findByVehicle_type(@RequestParam String q) {
-        return service.findByVehicle_type(q);
+    @GetMapping("/vehicleType")
+    public List<Vehicle> findByVehicleType(@RequestParam String q) {
+        return service.findByVehicleType(q);
     }
 
     @GetMapping("/brands")
