@@ -4,6 +4,7 @@ import com.DriveX.DriveX.model.vehicle.Vehicle;
 import com.DriveX.DriveX.repository.VehicleRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,5 +51,11 @@ public class VehicleService {
         return repo.findByYear(year);
     }
 
-    public List<Vehicle> findByVehicleType(String q) {return repo.findByVehicleType(q);}
+    public List<Vehicle> findByVehicleType(String q) {
+        List<String> types = Arrays.stream(q.split(","))
+                .map(String::trim)
+                .toList();
+
+        return repo.findByVehicleTypeInIgnoreCase(types);
+    }
 }
