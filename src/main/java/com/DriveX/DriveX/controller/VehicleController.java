@@ -109,6 +109,17 @@ public class VehicleController {
             @RequestParam Integer endYear) {
         return service.findByYearBetween(startYear, endYear);
     }
+    
+    @GetMapping("/filter")
+    public List<Vehicle> filter(
+            @RequestParam(required = false) String brand,
+            @RequestParam(required = false) String model,
+            @RequestParam(required = false) Integer year,
+            @RequestParam(required = false) String vehicleType
+    ) {
+        return service.filter(brand, model, year, vehicleType);
+    }
+
     // =========================
     //   GENERADOR DE REFERENCIA
     // =========================

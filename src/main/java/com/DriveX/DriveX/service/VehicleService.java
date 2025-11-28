@@ -62,4 +62,13 @@ public class VehicleService {
         return repo.findByYearBetween(startYear, endYear);
     }
 
+    public List<Vehicle> filter(String brand, String model, Integer year, String type) {
+        // Se normaliza strings vacíos a null para que no molesten
+        if (brand != null && brand.isBlank()) brand = null;
+        if (model != null && model.isBlank()) model = null;
+        if (type  != null && type.isBlank())  type  = null;
+
+        return repo.filter(brand, model, year, type);
+    }
+
 }
