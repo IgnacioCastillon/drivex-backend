@@ -58,4 +58,8 @@ public class VehicleService {
 
         return repo.findByVehicleTypeInIgnoreCase(types);
     }
+    public List<Vehicle> findByYearBetween(Integer startYear, Integer endYear) {
+        return repo.findByYearBetween(startYear, endYear);
+    }
+
 }

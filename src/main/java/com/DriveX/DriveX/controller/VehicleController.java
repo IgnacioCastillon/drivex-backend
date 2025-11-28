@@ -91,6 +91,7 @@ public class VehicleController {
     public List<Vehicle> searchYear(@RequestParam int year) {
         return service.findByYear(year);
     }
+
     @GetMapping("/vehicleType")
     public List<Vehicle> findByVehicleType(@RequestParam String q) {
         return service.findByVehicleType(q);
@@ -101,6 +102,12 @@ public class VehicleController {
         return Arrays.stream(Brand.values())
                 .sorted(Comparator.comparing(Enum::name))
                 .toArray(Brand[]::new);
+    }
+    @GetMapping("/year-range")
+    public List<Vehicle> findByYearRange(
+            @RequestParam Integer startYear,
+            @RequestParam Integer endYear) {
+        return service.findByYearBetween(startYear, endYear);
     }
     // =========================
     //   GENERADOR DE REFERENCIA

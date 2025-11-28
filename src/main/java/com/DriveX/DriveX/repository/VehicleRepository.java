@@ -18,4 +18,6 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
     List<Vehicle> findByYear(int year);
 
     List<Vehicle> findByVehicleTypeInIgnoreCase(List<String> types);
+
+    List<Vehicle> findByYearBetween(Integer starYear, Integer endYear);
 }
